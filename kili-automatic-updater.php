@@ -104,7 +104,7 @@ class Kili_Automatic_Updater {
 			}
 
 			// Sort and get latest tag.
-			$tags = array_map( create_function( '$t', 'return $t->name;' ), $response );
+			$tags = array_map(function ($t) { return $t->name; }, $response );
 			usort( $tags, "version_compare" );
 
 			// check and generate download link.$GLOBALS.
